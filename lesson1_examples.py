@@ -75,6 +75,29 @@ def count_digits(n):
     return result
 
 
+def fibonacci(n):
+    """
+    The Fibonacci numbers form a sequence of integers defined recursively in the
+    following way. The first two numbers in the Fibonacci sequence are 0 and 1,
+    and each subsequent number is the sum of the previous two. The first few
+    elements in this sequence are: 0, 1, 1, 2, 3, 5, 8, 13. Let’s write a
+    program that prints all the Fibonacci numbers, not exceeding a given integer
+    n.
+    """
+
+    r = []
+
+    a = 0
+    b = 1
+    while a <= n:
+        r.append(a)
+        c = a + b
+        a = b
+        b = c
+
+    return r
+
+
 if __name__ == "__main__":
 
     print("\nCodibility Examples\n\n")
@@ -82,6 +105,4 @@ if __name__ == "__main__":
     print(f"asterisks_triangle(4)\n{asterisks_triangle(4)}\n")
     print(f"asterisks_triangle_sym(4)\n{asterisks_triangle_sym(4)}\n")
     print(f"count_digits(112180444)\n{count_digits(112180444)}\n")
-
-    # print(*range(0, 10, 1))
-    # print(*range(10, 0, -1))
+    print(f"fibonacci(100)\n{fibonacci(100)}\n")
