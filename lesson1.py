@@ -8,10 +8,12 @@ def factorial(n):
     · n. We can obtain it by starting with 1 and multiplying it by all the
     integers from 1 to n. """
 
-    f = 1
+    r = 1
+
     for i in range(1, n + 1):
-        f *= i
-    return f
+        r *= i
+
+    return r
 
 
 def asterisks_triangle(n):
@@ -27,12 +29,14 @@ def asterisks_triangle(n):
     * * * *
     """
 
-    result = ""
+    r = ""
+
     for i in range(1, n + 1):
         for j in range(i):
-            result += "* "
-        result += "\n"
-    return result.strip()
+            r += "* "
+        r += "\n"
+
+    return r.strip()
 
 
 def asterisks_triangle_sym(n):
@@ -49,14 +53,16 @@ def asterisks_triangle_sym(n):
           *
     """
 
-    result = ""
+    r = ""
+
     for i in range(n, 0, -1):
         for j in range(n - i):
-            result += "  "
+            r += "  "
         for j in range(2 * i - 1):
-            result += "* "
-        result += "\n"
-    return result.strip()
+            r += "* "
+        r += "\n"
+
+    return r.strip()
 
 
 def count_digits(n):
@@ -68,11 +74,13 @@ def count_digits(n):
     how many steps are needed to obtain 0.
     """
 
-    result = 0
+    r = 0
+
     while n > 0:
         n //= 10
-        result += 1
-    return result
+        r += 1
+
+    return r
 
 
 def fibonacci(n):
@@ -98,9 +106,44 @@ def fibonacci(n):
     return r
 
 
+def binary_gap(n):
+    """
+    A binary gap within a positive integer N is any maximal sequence of
+    consecutive zeros that is surrounded by ones at both ends in the binary
+    representation of N.
+
+    For example, number 9 has binary representation 1001 and contains a binary
+    gap of length 2. The number 529 has binary representation 1000010001 and
+    contains two binary gaps: one of length 4 and one of length 3. The number 20
+    has binary representation 10100 and contains one binary gap of length 1. The
+    number 15 has binary representation 1111 and has no binary gaps.
+
+    Write a function:
+
+    def solution(N)
+
+    that, given a positive integer N, returns the length of its longest binary
+    gap. The function should return 0 if N doesn't contain a binary gap.
+
+    For example, given N = 1041 the function should return 5, because N has
+    binary representation 10000010001 and so its longest binary gap is of length
+    5.
+
+    Assume that:
+
+    N is an integer within the range [1..2,147,483,647]. Complexity:
+
+    expected worst-case time complexity is O(log(N)); expected worst-case space
+    complexity is O(1).
+    """
+
+    pass
+
+
 if __name__ == "__main__":
 
     print("\nCodibility Examples\n\n")
+
     print(f"factorial(10)\n{factorial(10)}\n")
     print(f"asterisks_triangle(4)\n{asterisks_triangle(4)}\n")
     print(f"asterisks_triangle_sym(4)\n{asterisks_triangle_sym(4)}\n")
