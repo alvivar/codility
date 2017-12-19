@@ -1,0 +1,1 @@
+#### Codility examples and exercises as a practice.
