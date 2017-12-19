@@ -165,5 +165,3 @@ if __name__ == "__main__":
     print(f"fibonacci(100)\n{fibonacci(100)}\n")
 
     print(f"binary_gap(1041)\n{binary_gap(1041)}\n")
-
-    # 1 00000 1 000 1
