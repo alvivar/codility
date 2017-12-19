@@ -137,15 +137,33 @@ def binary_gap(n):
     complexity is O(1).
     """
 
-    pass
+    nbin = bin(n)[2:]
+
+    ones = 0
+    zeros = 0
+    gap = 0
+
+    for char in nbin:
+        if char == "1":
+            ones += 1
+            gap = zeros if zeros > gap else gap
+            zeros = 0
+        if ones > 0 and char == "0":
+            zeros += 1
+
+    return (nbin, gap)
 
 
 if __name__ == "__main__":
 
-    print("\nCodibility Examples\n\n")
+    print("\nCodibility Lesson 1\n\n")
 
     print(f"factorial(10)\n{factorial(10)}\n")
     print(f"asterisks_triangle(4)\n{asterisks_triangle(4)}\n")
     print(f"asterisks_triangle_sym(4)\n{asterisks_triangle_sym(4)}\n")
     print(f"count_digits(112180444)\n{count_digits(112180444)}\n")
     print(f"fibonacci(100)\n{fibonacci(100)}\n")
+
+    print(f"binary_gap(1041)\n{binary_gap(1041)}\n")
+
+    # 1 00000 1 000 1
